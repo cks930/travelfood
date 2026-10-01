@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>科技企業｜PCB 技術與智慧製造</title>
+    <style>
+        /* ===== 全域 ===== */
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #F4F7FA;
+            color: #243B53;
+            font-family: "Noto Sans TC", "Microsoft JhengHei", Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* ===== 網站 ===== */
+        .wrapper {
+            width: 1024px;
+            max-width: 100%;
+            margin: auto;
+            background: #FFF;
+            box-shadow: 0 0 30px rgba(0, 30, 60, .12);
+        }
+
+        /* ===== Banner ===== */
+        .logo {
+            position: relative;
+            height: 280px;
+            background: linear-gradient(rgba(4, 20, 38, .72), rgba(4, 20, 38, .55)), url("images/a08.jpg") center / cover no-repeat;
+            border-bottom: 4px solid #00A8E8;
+        }
+
+        .logo::after {
+            content: "TECHNOLOGY • INNOVATION • FUTURE";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 25px;
+            color: #00D084;
+            font-size: 13px;
+            letter-spacing: 3px;
+            text-align: center;
+        }
+
+        /* ===== 導覽列 ===== */
+        .nav {
+            padding: 14px 10px;
+            background: #071A2B;
+            border-bottom: 1px solid #123B50;
+        }
+
+        .nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .nav a {
+            display: block;
+            padding: 9px 18px;
+            color: #EAF7FF;
+            border: 1px solid #168AAD;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            text-align: center;
+            transition: .3s;
+        }
+
+        .nav a:hover {
+            color: #071A2B;
+            background: #00A8E8;
+            border-color: #00A8E8;
+            box-shadow: 0 0 12px rgba(0, 168, 232, .55);
+            transform: translateY(-2px);
+        }
+
+        /* ===== 內容 ===== */
+        .content {
+            padding: 55px 70px;
+            background: #EAF4F8;
+            text-align: center;
+        }
+
+        /* ===== 標題 ===== */
+        .content h1 {
+            margin: 0 0 35px;
+            color: #071A2B;
+            font-size: 40px;
+            line-height: 1.4;
+        }
+
+        .content h1::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 4px;
+            margin: 15px auto 0;
+            background: #00A8E8;
+            border-radius: 5px;
+        }
+
+        /* ===== 文章 ===== */
+        .article {
+            margin: 18px 0;
+            padding: 20px 25px;
+            background: #FFF;
+            color: #34495E;
+            line-height: 1.9;
+            text-align: left;
+            border-left: 5px solid #00A8E8;
+            border-radius: 8px;
+            box-shadow: 0 5px 18px rgba(0, 40, 70, .10);
+            transition: .3s;
+        }
+
+        .article:hover {
+            border-left-color: #00D084;
+            box-shadow: 0 10px 25px rgba(0, 80, 120, .16);
+            transform: translateY(-4px);
+        }
+
+        /* ===== 每段文字大小 ===== */
+        .text-01 {
+            font-size: 16px;
+        }
+
+        .text-02 {
+            font-size: 17px;
+        }
+
+        .text-03 {
+            font-size: 18px;
+        }
+
+        /* ===== 按鈕 ===== */
+        .btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 35px;
+            color: #071A2B;
+            background: #00D084;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0 6px 18px rgba(0, 208, 132, .30);
+            transition: .3s;
+        }
+
+        .btn:hover {
+            color: #FFF;
+            background: #00A8E8;
+            box-shadow: 0 8px 22px rgba(0, 168, 232, .35);
+            transform: translateY(-3px);
+        }
+
+        /* ===== Footer ===== */
+        .footer {
+            padding: 20px 10px;
+            color: #8FB3C4;
+            background: #071A2B;
+            border-top: 3px solid #00A8E8;
+            font-size: 13px;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        /* ===== color.css 標題覆寫 ===== */
+        .mytitle-01 {
+            font-size: 40px;
+        }
+
+        .mytitle-02 {
+            font-size: 45px;
+        }
+
+        .mytitle-03 {
+            font-size: 52px;
+        }
+
+        /* ================================================= 平板 ================================================= */
+        @media (max-width: 1024px) {
+            .content {
+                padding: 50px;
+            }
+
+            .nav ul {
+                flex-direction: column;
+            }
+
+            .nav a {
+                width: 100%;
+            }
+        }
+
+        /* ================================================= 手機 ================================================= */
+        @media (max-width: 600px) {
+            .wrapper {
+                box-shadow: none;
+            }
+
+            /* Banner */
+            .logo {
+                height: 140px;
+            }
+
+            .logo::after {
+                bottom: 15px;
+                font-size: 9px;
+                letter-spacing: 1px;
+            }
+
+            /* 導覽列 */
+            .nav {
+                padding: 8px;
+            }
+
+            .nav ul {
+                gap: 4px;
+            }
+
+            .nav a {
+                padding: 8px 5px;
+                font-size: 14px;
+            }
+
+            /* 內容 */
+            .content {
+                padding: 30px 12px;
+            }
+
+            /* 標題 */
+            .content h1,
+            .mytitle-01 {
+                margin-bottom: 25px;
+                font-size: 25px;
+            }
+
+            /* 文章 */
+            .article {
+                margin: 12px 0;
+                padding: 14px 12px;
+                line-height: 1.85;
+                border-left-width: 4px;
+            }
+
+            /* 手機文字 */
+            .text-01 {
+                font-size: 13px;
+            }
+
+            .text-02 {
+                font-size: 14px;
+            }
+
+            .text-03 {
+                font-size: 15px;
+            }
+
+            /* 按鈕 */
+            .btn {
+                display: block;
+                margin-top: 22px;
+                padding: 10px;
+                font-size: 14px;
+                text-align: center;
+            }
+
+            /* Footer */
+            .footer {
+                padding: 15px 5px;
+                font-size: 10px;
+            }
+        }
+
+        /* ================================================= 超小手機 ================================================= */
+        @media (max-width: 400px) {
+            .logo {
+                height: 120px;
+            }
+
+            .content {
+                padding: 20px 8px;
+            }
+
+            .content h1,
+            .mytitle-01 {
+                font-size: 21px;
+            }
+
+            .text-01 {
+                font-size: 12px;
+            }
+
+            .text-02 {
+                font-size: 13px;
+            }
+
+            .text-03 {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper"> <!-- Banner -->
+        <header class="logo"></header> <!-- 導覽列 -->
+        <nav class="nav">
+            <ul>
+                <li><a href="#">首頁</a></li>
+                <li><a href="#">職缺</a></li>
+                <li><a href="#">公司介紹</a></li>
+                <li><a href="#">合作廠商</a></li>
+                <li><a href="#">最新消息</a></li>
+            </ul>
+        </nav> <!-- 主要內容 -->
+        <main class="content">
+            <h1 class="mytitle-01"> 創始奠基：傳統工藝與穩定產能 </h1>
+            <article class="article text-01"> 公司成立初期，專注於硬式印刷電路板（Rigid PCB）的研發與製造， 主力服務消費性電子與家電市場。
+                我們建立起高效率的單雙面板與傳統多層板生產線， 以優異的良率與穩定的交期在市場中站穩腳跟。 </article>
+            <article class="article text-02"> 隨著通訊技術與個人電腦的蓬勃發展， 公司全面推動技術轉型， 跨足高密度互連板（HDI）與軟硬結合板（Rigid-Flex PCB）領域。
+                我們斥資引進先進的雷射鑽孔與精密線路曝光設備， 成功打入智慧型手機、伺服器及汽車電子等高端供應鏈。 </article>
+            <article class="article text-03"> 邁入 AI 與高效能運算（HPC）時代， 公司聚焦於 IC 載板（Substrate）、 超高層次板及 5G/6G 次世代通訊技術的開發，
+                大幅提升線路精細度與散熱效能。 </article> <a href="#" class="btn"> 了解更多 </a>
+        </main> <!-- Footer -->
+        <footer class="footer"> PoweByXXX20260923 </footer>
+    </div>
+</body>
+
+</html>
